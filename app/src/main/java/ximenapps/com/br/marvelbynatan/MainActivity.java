@@ -8,17 +8,18 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 
 import java.util.List;
 
+import ximenapps.com.br.marvelbynatan.helpers.OnStartDragListener;
 import ximenapps.com.br.marvelbynatan.helpers.SimpleItemTouchHelperCallback;
 import ximenapps.com.br.marvelbynatan.model.Character;
 import ximenapps.com.br.marvelbynatan.service.CharactersRestAdapter;
 
-public class MainActivity extends AppCompatActivity implements MainView {
+public class MainActivity extends AppCompatActivity implements MainView, OnStartDragListener {
     private final String TAG = getClass().getCanonicalName();
     CharactersRestAdapter charactersAdapter;
     CharactersListAdapter charactersListAdapter;
     RecyclerView.LayoutManager charactersListLayoutManager;
     RecyclerView charactersList;
-
+    ItemTouchHelper touchHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +40,16 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void showCharacters(List<Character> characters) {
-        charactersListAdapter = new CharactersListAdapter(characters, getApplicationContext());
+        charactersListAdapter = new CharactersListAdapter(characters, getApplicationContext(), this);
         charactersList.setAdapter(charactersListAdapter);
         ItemTouchHelper.Callback callback =
                 new SimpleItemTouchHelperCallback(charactersListAdapter);
-        ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
+        touchHelper = new ItemTouchHelper(callback);
         touchHelper.attachToRecyclerView(charactersList);
+    }
+
+    @Override
+    public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
+        touchHelper.startDrag(viewHolder);
     }
 }
