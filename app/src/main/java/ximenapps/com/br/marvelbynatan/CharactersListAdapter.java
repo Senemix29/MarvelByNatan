@@ -10,14 +10,17 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.Collections;
 import java.util.List;
 
+import retrofit2.http.POST;
+import ximenapps.com.br.marvelbynatan.helpers.ItemTouchHelperAdapter;
 import ximenapps.com.br.marvelbynatan.model.Character;
 
 /**
  * Created by Natan on 05/08/2016.
  */
-public class CharactersListAdapter extends RecyclerView.Adapter<CharactersListAdapter.ViewHolder> {
+public class CharactersListAdapter extends RecyclerView.Adapter<CharactersListAdapter.ViewHolder> implements ItemTouchHelperAdapter {
     List<Character> characters;
     Context context;
 
@@ -45,6 +48,19 @@ public class CharactersListAdapter extends RecyclerView.Adapter<CharactersListAd
     @Override
     public int getItemCount() {
         return characters.size();
+    }
+
+    @Override
+    public void onItemMove(int fromPosition, int toPosition) {
+        Character prev = characters.remove(fromPosition);
+        characters.add(toPosition > fromPosition ? toPosition - 1 : toPosition, prev);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+        characters.remove(position);
+        notifyItemRemoved(position);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
