@@ -1,8 +1,10 @@
+plugins {
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.21'
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
-def MARVEL_API_PUBLIC_KEY = System.getenv("MARVEL_API_PUBLIC_KEY") ?: ""
-def MARVEL_API_PRIVATE_KEY = System.getenv("MARVEL_API_PRIVATE_KEY") ?: ""
 
 android {
     compileSdkVersion 30
@@ -16,6 +18,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        def MARVEL_API_PUBLIC_KEY = System.getenv("MARVEL_API_PUBLIC_KEY") ?: ""
+        def MARVEL_API_PRIVATE_KEY = System.getenv("MARVEL_API_PRIVATE_KEY") ?: ""
         buildConfigField "String", "BASE_URL", "\"http://gateway.marvel.com/v1/public/\""
         buildConfigField "String", "API_PUBLIC_KEY", "\"$MARVEL_API_PUBLIC_KEY\""
         buildConfigField "String", "API_PRIVATE_KEY", "\"$MARVEL_API_PRIVATE_KEY\""
@@ -46,9 +50,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    //JUnit
     testImplementation 'junit:junit:4.13.2'
 
     // Android Ktx
@@ -87,6 +91,9 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
 
+    // KSerialization
+    def kSerialization_version = '1.2.2'
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kSerialization_version"
 
     // Jetpack Arch Core
     def core_testing_version = "2.1.0"
