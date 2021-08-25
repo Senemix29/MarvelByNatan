@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 class CharacterResponse(
     val name: String,
     val description: String,
-    val thumbnail: ImageResponse,
+    val imageResponse: ImageResponse,
 )

@@ -6,5 +6,5 @@ import ximenapps.com.br.marvelbynatan.features.characters.data.model.CharactersD
 
 interface CharactersService {
     @GET("characters")
-    fun listCharacters(): Single<CharactersDataWrapperResponse>
+    fun getCharacters(): Single<CharactersDataWrapperResponse>
 }

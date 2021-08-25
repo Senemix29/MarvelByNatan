@@ -8,8 +8,8 @@ import ximenapps.com.br.marvelbynatan.features.characters.data.api.CharactersSer
 class CharactersRemoteDataSourceImpl(
     private val service: CharactersService
 ) : CharactersRemoteDataSource {
-    override fun listCharacters(): Single<List<CharacterResponse>> {
-        return service.listCharacters().unwrap()
+    override fun getCharacters(): Single<List<CharacterResponse>> {
+        return service.getCharacters().unwrap()
     }
 
     private fun Single<CharactersDataWrapperResponse>.unwrap(): Single<List<CharacterResponse>> {
