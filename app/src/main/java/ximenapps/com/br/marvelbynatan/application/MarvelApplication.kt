@@ -1,4 +1,4 @@
-package ximenapps.com.br.marvelbynatan
+package ximenapps.com.br.marvelbynatan.application
 
 import android.app.Application
 import io.reactivex.rxjava3.internal.functions.Functions
