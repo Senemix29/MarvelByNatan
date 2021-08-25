@@ -1,4 +1,4 @@
-package ximenapps.com.br.marvelbynatan.features.characters.data.service
+package ximenapps.com.br.marvelbynatan.features.characters.data.api
 
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
