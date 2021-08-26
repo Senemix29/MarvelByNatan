@@ -20,7 +20,7 @@ android {
 
         def MARVEL_API_PUBLIC_KEY = System.getenv("MARVEL_API_PUBLIC_KEY") ?: ""
         def MARVEL_API_PRIVATE_KEY = System.getenv("MARVEL_API_PRIVATE_KEY") ?: ""
-        buildConfigField "String", "BASE_URL", "\"http://gateway.marvel.com/v1/public/\""
+        buildConfigField "String", "BASE_URL", "\"https://gateway.marvel.com/v1/public/\""
         buildConfigField "String", "API_PUBLIC_KEY", "\"$MARVEL_API_PUBLIC_KEY\""
         buildConfigField "String", "API_PRIVATE_KEY", "\"$MARVEL_API_PRIVATE_KEY\""
     }

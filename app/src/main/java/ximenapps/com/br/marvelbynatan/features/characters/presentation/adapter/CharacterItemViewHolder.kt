@@ -11,7 +11,9 @@ class CharacterItemViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(character: Character)= with(binding) {
         characterName.text = character.name
-        characterPicture.load(character.thumbnailPath) { crossfade(true) }
+        characterPicture.load(character.thumbnailPath) {
+            crossfade(true)
+        }
     }
 
 }

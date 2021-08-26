@@ -10,7 +10,8 @@ class CharacterMapper {
                 id = it.id,
                 name = it.name,
                 description = it.description,
-                thumbnailPath = "${it.imageResponse.path}.${it.imageResponse.extension}"
+                thumbnailPath =
+                "${it.thumbnail.path}/landscape_incredible.${it.thumbnail.extension}"
             )
         }
     }

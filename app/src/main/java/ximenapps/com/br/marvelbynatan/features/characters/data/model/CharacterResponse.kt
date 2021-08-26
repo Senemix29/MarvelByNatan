@@ -1,11 +1,12 @@
 package ximenapps.com.br.marvelbynatan.features.characters.data.model
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-class CharacterResponse(
-    val id: Int,
-    val name: String,
-    val description: String,
-    val imageResponse: ImageResponse,
+data class CharacterResponse(
+    @SerialName("id") val id: Int,
+    @SerialName("name") val name: String,
+    @SerialName("description") val description: String,
+    @SerialName("thumbnail") val thumbnail: ImageResponse,
 )
