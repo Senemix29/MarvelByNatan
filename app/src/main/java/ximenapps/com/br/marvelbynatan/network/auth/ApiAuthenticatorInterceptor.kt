@@ -11,7 +11,7 @@ import ximenapps.com.br.marvelbynatan.network.exception.AuthException
 
 private const val TS_QUERY_PARAM_NAME = "ts"
 private const val API_KEY_QUERY_PARAM_NAME = "apikey"
-private const val HASH_QUERY_PARAM_NAME = "hask"
+private const val HASH_QUERY_PARAM_NAME = "hash"
 
 class ApiAuthenticatorInterceptor : Interceptor, KoinComponent {
     override fun intercept(chain: Interceptor.Chain): Response {
