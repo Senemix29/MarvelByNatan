@@ -1,6 +1,7 @@
 package ximenapps.com.br.marvelbynatan.features.characters.domain.model
 
-class Character(
+data class Character(
+    val id: Int,
     val name: String,
     val description: String,
     val thumbnailPath: String,

@@ -7,6 +7,7 @@ class CharacterMapper {
     fun map(characterResponse: List<CharacterResponse>): List<Character> {
         return characterResponse.map {
             Character(
+                id = it.id,
                 name = it.name,
                 description = it.description,
                 thumbnailPath = "${it.imageResponse.path}.${it.imageResponse.extension}"
