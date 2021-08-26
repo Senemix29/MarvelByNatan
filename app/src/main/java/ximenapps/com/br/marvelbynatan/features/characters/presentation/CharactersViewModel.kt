@@ -24,6 +24,10 @@ class CharactersViewModel(
         getCharacters()
     }
 
+    fun onClickErrorButton() {
+        getCharacters()
+    }
+
     private fun getCharacters() {
         getCharactersUseCase()
             .subscribeOn(Schedulers.io())

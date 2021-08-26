@@ -8,7 +8,7 @@
     android:paddingEnd="@dimen/double_space">
 
     <ximenapps.com.br.marvelbynatan.common.presentation.error.ErrorView
-        android:id="@+id/feedErrorView"
+        android:id="@+id/charactersErrorView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/feedProgress"
+        android:id="@+id/charactersProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/feedRecyclerView"
+        android:id="@+id/charactersRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
