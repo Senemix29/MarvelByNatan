@@ -1,0 +1,3 @@
+package ximenapps.com.br.marvelbynatan.features.characters.presentation
+
+class CharactersActivityTest
