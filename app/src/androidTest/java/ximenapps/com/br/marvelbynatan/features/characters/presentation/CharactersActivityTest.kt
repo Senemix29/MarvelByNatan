@@ -1,3 +1,9 @@
 package ximenapps.com.br.marvelbynatan.features.characters.presentation
 
-class CharactersActivityTest
+import okhttp3.mockwebserver.MockWebServer
+import org.junit.Rule
+
+class CharactersActivityTest {
+    @get:Rule
+    val mockWebServer = MockWebServer()
+}

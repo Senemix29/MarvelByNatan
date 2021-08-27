@@ -85,6 +85,10 @@ dependencies {
     def okhttp_version = "4.9.1"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
+    // MockWebServer
+    def mock_web_server_version = okhttp_version
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$mock_web_server_version"
+
     // Retrofit
     def retrofit_version = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
