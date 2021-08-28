@@ -10,8 +10,8 @@ import ximenapps.com.br.marvelbynatan.features.characters.presentation.utils.Cus
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.utils.initDispatcher
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.utils.mockRequest
 
-private const val CHARACTERS_ENDPOINT = "characters"
-private const val CHARACTERS_SUCCESS_RESPONSE = "/characters/characters_success_response.json"
+private const val CHARACTERS_ENDPOINT = "/characters"
+private const val CHARACTERS_SUCCESS_RESPONSE = "characters/characters_success_response.json"
 
 class CharactersArrangementRobot(private val mockWebServer: MockWebServer) {
     private val commonsDI = CommonsDI()
@@ -27,7 +27,7 @@ class CharactersArrangementRobot(private val mockWebServer: MockWebServer) {
     }
 
     fun mockApiWithSuccessResponse() {
-        mockWebServer.mockRequest(CHARACTERS_ENDPOINT, CHARACTERS_SUCCESS_RESPONSE)
+        mockRequest(CHARACTERS_ENDPOINT, CHARACTERS_SUCCESS_RESPONSE)
         mockWebServer.initDispatcher()
     }
 
