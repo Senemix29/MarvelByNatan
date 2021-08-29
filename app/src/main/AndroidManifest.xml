@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".features.characters.presentation.CharactersActivity">
+        <activity
+            android:name=".features.characters.presentation.CharactersActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
