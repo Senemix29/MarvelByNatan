@@ -29,11 +29,11 @@ class CharactersArrangementRobot(private val mockWebServer: MockWebServer) {
         charactersDI.load()
     }
 
-    private fun loadNetworkDependencies() {
+    fun loadNetworkDependencies() {
         customNetworkDI.loadWith(mockWebServerUrl)
     }
 
-    private fun loadNetworkErrorDependencies() {
+    fun loadNetworkErrorDependencies() {
         val okHttpClient = OkHttpClient.Builder()
             .connectTimeout(1, TimeUnit.MILLISECONDS)
             .build()
@@ -46,7 +46,7 @@ class CharactersArrangementRobot(private val mockWebServer: MockWebServer) {
     }
 
     fun mockApiWithHttpErrorResponse() {
-        mockRequest(CHARACTERS_ENDPOINT, CHARACTERS_HTTP_ERROR_RESPONSE)
+        mockRequest(CHARACTERS_ENDPOINT, CHARACTERS_HTTP_ERROR_RESPONSE, 404)
         mockWebServer.initDispatcher()
     }
 

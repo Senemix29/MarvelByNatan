@@ -6,7 +6,7 @@
     <string name="ui_api_error_title">Strange Clouds in the air</string>
     <string name="ui_api_error_message">Sorry, we are doing our best to fix this problem</string>
     <string name="ui_network_error_title">Connection Error</string>
-    <string name="ui_network_error_message">You should check your internet connection.</string>
+    <string name="ui_network_error_message">You should check your internet connection</string>
     <string name="ui_unknown_error_title">We have a problem</string>
     <string name="ui_unknown_error_message">Sorry, something wrong happened</string>
 </resources>

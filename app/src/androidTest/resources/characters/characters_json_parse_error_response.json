@@ -12,9 +12,9 @@
     "count": 10,
     "results": [
       {
-        "id": 1011334,
-        "name": 234,
-        "description": 10,
+        "id": null,
+        "name": null,
+        "description": null,
         "modified": "2014-04-29T14:18:17-0400",
         "thumbnail": {
           "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
