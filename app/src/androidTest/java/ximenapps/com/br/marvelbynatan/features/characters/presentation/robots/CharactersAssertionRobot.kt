@@ -7,8 +7,8 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.scrollToPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
+import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.Matcher
-import org.hamcrest.Matchers.allOf
 import ximenapps.com.br.marvelbynatan.R
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.utils.matchers.RecyclerViewMatchers.atPosition
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.utils.matchers.RecyclerViewMatchers.itemsCount
