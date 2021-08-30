@@ -1,6 +1,7 @@
 package ximenapps.com.br.marvelbynatan.features.characters.presentation.robots
 
 import android.view.View
+import androidx.annotation.DrawableRes
 import androidx.annotation.IdRes
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
@@ -12,8 +13,24 @@ import org.hamcrest.Matcher
 import ximenapps.com.br.marvelbynatan.R
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.utils.matchers.RecyclerViewMatchers.atPosition
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.utils.matchers.RecyclerViewMatchers.itemsCount
+import ximenapps.com.br.marvelbynatan.features.characters.presentation.utils.matchers.withDrawable
 
 class CharactersAssertionRobot {
+    fun errorTitleIs(title: String) {
+        onView(withId(R.id.errorViewTitle)).check(matches(withText(title)))
+    }
+
+    fun errorMessageIs(message: String) {
+        onView(withId(R.id.errorViewMessage)).check(matches(withText(message)))
+    }
+
+    fun errorButtonTextIs(message: String) {
+        onView(withId(R.id.errorViewButton)).check(matches(withText(message)))
+    }
+
+    fun errorIconIs(@DrawableRes icon: Int) {
+        onView(withId(R.id.errorViewImage)).check(matches(withDrawable(icon)))
+    }
 
     fun listSizeIs(size: Int) {
         onView(withId(R.id.charactersRecyclerView)).check(itemsCount(size))
