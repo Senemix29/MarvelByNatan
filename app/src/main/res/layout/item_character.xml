@@ -6,25 +6,17 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/single_space">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_alignBottom="@id/character_picture"
-        android:alpha="0.5"
-        android:background="@drawable/header_selector"
-        app:layout_constraintBottom_toBottomOf="@id/character_picture"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/character_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/character_picture"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20sp"
+        android:paddingStart="@dimen/double_space"
+        android:paddingEnd="@dimen/double_space"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_label"
+        android:elevation="@dimen/unit_space"
+        android:background="@drawable/header_selector"
         app:layout_constraintBottom_toBottomOf="@id/character_picture"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +25,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/character_picture"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="@dimen/squared_image_size"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:scaleType="fitXY"
