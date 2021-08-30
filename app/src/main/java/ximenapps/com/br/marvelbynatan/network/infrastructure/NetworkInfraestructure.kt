@@ -25,13 +25,14 @@ class NetworkInfraStructure {
 
     fun getRetrofit(
         baseUrl: String = BuildConfig.BASE_URL,
-        okHttpClient: OkHttpClient = getDefaultOkHttpClient()
+        okHttpClient: OkHttpClient? = getDefaultOkHttpClient()
     ): Retrofit {
-        return Retrofit.Builder()
+        val retrofitBuilder = Retrofit.Builder()
             .baseUrl(baseUrl)
-            .client(okHttpClient)
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        okHttpClient?.let { retrofitBuilder.client(it) }
+
+        return retrofitBuilder.build()
     }
 }

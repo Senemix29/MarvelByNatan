@@ -1,10 +1,7 @@
 package ximenapps.com.br.marvelbynatan.features.characters.presentation.utils
 
 import android.net.Uri
-import okhttp3.mockwebserver.Dispatcher
-import okhttp3.mockwebserver.MockResponse
-import okhttp3.mockwebserver.MockWebServer
-import okhttp3.mockwebserver.RecordedRequest
+import okhttp3.mockwebserver.*
 
 const val NOT_FOUND_HTTP_CODE = 404
 const val SUCCESS_HTTP_CODE = 200
@@ -22,6 +19,11 @@ fun mockRequest(
 
         enqueuedResponsesRegister[path] = response
     }
+}
+
+fun mockRequestWIthNetworkError(path: String) {
+    val response = MockResponse().setSocketPolicy(SocketPolicy.NO_RESPONSE)
+    enqueuedResponsesRegister[path] = response
 }
 
 fun MockWebServer.initDispatcher() {

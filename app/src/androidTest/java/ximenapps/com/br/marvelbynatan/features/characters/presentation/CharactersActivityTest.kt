@@ -14,7 +14,7 @@ class CharactersActivityTest {
     fun shouldShowCharacterList_whenApiReturnsSuccess() {
         arrange {
             mockApiWithSuccessResponse()
-            loadDependencies()
+            loadRegularDependencies()
             startActivity()
         }
         check {
