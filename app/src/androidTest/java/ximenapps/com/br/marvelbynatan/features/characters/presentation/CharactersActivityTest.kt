@@ -4,6 +4,7 @@ import okhttp3.mockwebserver.MockWebServer
 import org.junit.Rule
 import org.junit.Test
 import ximenapps.com.br.marvelbynatan.R
+import ximenapps.com.br.marvelbynatan.features.characters.presentation.robots.CharactersActionRobot.Companion.act
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.robots.CharactersAssertionRobot.Companion.check
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.robots.arrange
 
@@ -72,6 +73,25 @@ class CharactersActivityTest {
             errorTitleIs("We have a problem")
             errorMessageIs("Sorry, something wrong happened")
             errorButtonTextIs("Try again")
+        }
+    }
+
+    @Test
+    fun shouldRecoverFromError_AndShowCharactersList_whenClickRetry() {
+        arrange {
+            mockApiWithHttpErrorResponseRecover()
+            loadNetworkDependencies()
+            loadRegularDependencies()
+            startActivity()
+        }
+        act {
+            clickErrorButton()
+        }
+        check {
+            characterNameAtPosition("3-D Man", 0)
+            characterNameAtPosition("Abomination (Emil Blonsky)", 4)
+            characterNameAtPosition("Adam Warlock", 10)
+            listSizeIs(11)
         }
     }
 }
