@@ -79,7 +79,7 @@ class CharactersActivityTest {
     @Test
     fun shouldRecoverFromError_AndShowCharactersList_whenClickRetry() {
         arrange {
-            mockApiWithHttpErrorResponseRecover()
+            mockApiWithHttpErroRecoverResponse()
             loadNetworkDependencies()
             loadRegularDependencies()
             startActivity()

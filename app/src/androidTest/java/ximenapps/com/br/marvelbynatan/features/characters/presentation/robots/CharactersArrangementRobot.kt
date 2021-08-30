@@ -60,7 +60,7 @@ class CharactersArrangementRobot(private val mockWebServer: MockWebServer) {
         mockWebServer.initDispatcher()
     }
 
-    fun mockApiWithHttpErrorResponseRecover() {
+    fun mockApiWithHttpErroRecoverResponse() {
         mockRequest(CHARACTERS_ENDPOINT, CHARACTERS_HTTP_ERROR_RESPONSE, 404)
         mockRequest(CHARACTERS_ENDPOINT, CHARACTERS_SUCCESS_RESPONSE)
         mockWebServer.initDispatcher()
