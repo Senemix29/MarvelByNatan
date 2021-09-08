@@ -58,7 +58,7 @@ class CharactersAssertionRobot {
     }
 
     companion object {
-        fun check(block: CharactersAssertionRobot.() -> Unit) {
+        fun assert(block: CharactersAssertionRobot.() -> Unit) {
             CharactersAssertionRobot().apply(block)
         }
     }

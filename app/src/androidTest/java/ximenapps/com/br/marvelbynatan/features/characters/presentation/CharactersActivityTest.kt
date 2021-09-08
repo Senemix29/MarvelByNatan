@@ -5,7 +5,7 @@ import org.junit.Rule
 import org.junit.Test
 import ximenapps.com.br.marvelbynatan.R
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.robots.CharactersActionRobot.Companion.act
-import ximenapps.com.br.marvelbynatan.features.characters.presentation.robots.CharactersAssertionRobot.Companion.check
+import ximenapps.com.br.marvelbynatan.features.characters.presentation.robots.CharactersAssertionRobot.Companion.assert
 import ximenapps.com.br.marvelbynatan.features.characters.presentation.robots.arrange
 
 class CharactersActivityTest {
@@ -20,7 +20,7 @@ class CharactersActivityTest {
             loadRegularDependencies()
             startActivity()
         }
-        check {
+        assert {
             characterNameAtPosition("3-D Man", 0)
             characterNameAtPosition("Abomination (Emil Blonsky)", 4)
             characterNameAtPosition("Adam Warlock", 10)
@@ -36,7 +36,7 @@ class CharactersActivityTest {
             loadRegularDependencies()
             startActivity()
         }
-        check {
+        assert {
             errorIconIs(R.drawable.ic_connection_problem)
             errorTitleIs("Connection Error")
             errorMessageIs("You should check your internet connection")
@@ -52,7 +52,7 @@ class CharactersActivityTest {
             loadRegularDependencies()
             startActivity()
         }
-        check {
+        assert {
             errorIconIs(R.drawable.ic_api_problem)
             errorTitleIs("Strange Clouds in the air")
             errorMessageIs("Sorry, we are doing our best to fix this problem")
@@ -68,7 +68,7 @@ class CharactersActivityTest {
             loadRegularDependencies()
             startActivity()
         }
-        check {
+        assert {
             errorIconIs(R.drawable.ic_generic_error)
             errorTitleIs("We have a problem")
             errorMessageIs("Sorry, something wrong happened")
@@ -87,7 +87,7 @@ class CharactersActivityTest {
         act {
             clickErrorButton()
         }
-        check {
+        assert {
             characterNameAtPosition("3-D Man", 0)
             characterNameAtPosition("Abomination (Emil Blonsky)", 4)
             characterNameAtPosition("Adam Warlock", 10)
